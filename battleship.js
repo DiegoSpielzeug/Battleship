@@ -82,9 +82,20 @@ function parseGuess(guess){
         } else {
             return row + column;
         }
-        
     }
     return null;
-}
+};
+let fireButton = document.getElementById("fireButton");
+fireButton.addEventListener("click", handleFireButton);
 
+function handleFireButton(e){
+    e.preventDefault();
+
+    let guessInput = document.getElementById("guessInput");
+    let guess = guessInput.value;
+
+    controler.proccesGuess(guess);
+    guessInput.value = "";
+
+}
 
